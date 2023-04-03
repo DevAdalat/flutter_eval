@@ -63,6 +63,7 @@ import 'package:flutter_eval/src/widgets/image.dart';
 import 'package:flutter_eval/src/widgets/navigator.dart';
 import 'package:flutter_eval/src/widgets/scroll_controller.dart';
 import 'package:flutter_eval/src/widgets/scroll_view.dart';
+import 'package:flutter_eval/src/widgets/single_child_scroll_view.dart';
 import 'package:flutter_eval/src/widgets/spacer.dart';
 import 'package:flutter_eval/src/widgets/text.dart';
 
@@ -164,7 +165,9 @@ class FlutterEvalPlugin implements EvalPlugin {
       $MemoryImage.$declaration,
       $ResizeImage.$declaration,
       $Switch.$declaration,
-      $SwitchListTile.$declaration
+      $SwitchListTile.$declaration,
+      $SingleChildScrollView.$declaration,
+      $Stack.$declaration,
     ];
 
     for (final cls in classes) {
@@ -267,6 +270,11 @@ class FlutterEvalPlugin implements EvalPlugin {
         $Alignment.$new,
       )
       ..registerBridgeFunc(
+        'package:flutter/src/widgets/single_child_scroll_view.dart',
+        'SingleChildScrollView.',
+        $SingleChildScrollView.$new,
+      )
+      ..registerBridgeFunc(
         'package:flutter/src/painting/alignment.dart',
         'Alignment.topLeft*g',
         $Alignment.$topLeft,
@@ -280,6 +288,11 @@ class FlutterEvalPlugin implements EvalPlugin {
         'package:flutter/src/painting/alignment.dart',
         'Alignment.topRight*g',
         $Alignment.$topRight,
+      )
+      ..registerBridgeFunc(
+        'package:flutter/src/widgets/basic.dart',
+        'Stack.',
+        $Stack.$new,
       )
       ..registerBridgeFunc(
         'package:flutter/src/painting/alignment.dart',

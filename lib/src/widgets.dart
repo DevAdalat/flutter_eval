@@ -15,4 +15,5 @@ export 'src/widgets/scroll_controller.dart';
 export 'src/widgets/scroll_view.dart';
 export 'src/widgets/text.dart';
 export 'src/widgets/navigator.dart';
+export 'src/widgets/single_child_scroll_view.dart';
 ''';
